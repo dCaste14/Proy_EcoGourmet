@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyHack.Registro"
+             Title="Registro">
+                     
+    
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0">
+        <!-- Contenido principal de tu página -->
+        <!-- Asegúrate de que el contenido esté dentro de un Grid o algún otro contenedor -->
+
+        <!-- Imagen en la esquina superior derecha -->
+        <Image Source="logo.png" 
+               HorizontalOptions="End" VerticalOptions="Start"
+               Margin="0,20,20,0"
+               WidthRequest="80" HeightRequest="80"/>
+        <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
+
+        <Entry 
+            x:Name ="cajacorreo" 
+            Placeholder ="ejemplo@ejemplo.com" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+
+        <Entry 
+            x:Name ="cajacontraseña" 
+            Placeholder ="*******" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+
+        <Button
+            x:Name="BtnNavegarVolver"
+            Text="Enviar"
+            Clicked="OnNavegarVolverCliked"
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
