@@ -4,6 +4,7 @@
              x:Class="ProyHack.MainPage">
 
     <ScrollView>
+        
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -22,7 +23,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Por favor, seleccione una opción"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
@@ -31,16 +32,14 @@
             <Button
                 x:Name="BtnNavegar1"
                 Text="Resgistro"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnNavegar1Cliked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="FillAndExpand"/>
 
             <Button
                 x:Name="BtnNavegar2"
                 Text="Iniciar sesión"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnNavegar2Cliked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="FillAndExpand" />
 
         </VerticalStackLayout>
     </ScrollView>
