@@ -19,6 +19,12 @@
         <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
 
         <Entry 
+            x:Name ="cajanombre" 
+            Placeholder ="Nombre" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+
+        <Entry 
             x:Name ="cajacorreo" 
             Placeholder ="ejemplo@ejemplo.com" 
             VerticalOptions="Center" 
@@ -26,14 +32,20 @@
 
         <Entry 
             x:Name ="cajacontraseña" 
-            Placeholder ="*******" 
+            Placeholder ="Contraseña" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+
+        <Entry 
+            x:Name ="cajarepetircontraseña" 
+            Placeholder =" Repetir Contraseña" 
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
         <Button
-            x:Name="BtnNavegarVolver"
+            x:Name="BtnEnviarReg"
             Text="Enviar"
-            Clicked="OnNavegarVolverCliked"
+            Clicked="OnBtnEnviarRegCliked"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
