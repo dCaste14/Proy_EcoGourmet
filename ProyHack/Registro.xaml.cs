@@ -7,16 +7,20 @@ public partial class Registro : ContentPage
         InitializeComponent();
     }
 
-
-    private void MiMetodo()
+    private async void OnBtnEnviarRegCliked(object sender, EventArgs e)
     {
-        // Accediendo al texto de la caja de texto
-        string texto = cajacorreo.Text;
-    }
+        // Validación de campos
+        if (string.IsNullOrWhiteSpace(cajanombre.Text) || string.IsNullOrWhiteSpace(cajacorreo.Text) 
+            || string.IsNullOrWhiteSpace(cajacontraseña.Text) || string.IsNullOrWhiteSpace(cajarepetircontraseña.Text))
+        {
+            await DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
+            return;
+        }
 
-    private async void OnNavegarVolverCliked(object sender, EventArgs e)
-    {
-
-        await Navigation.PushAsync(new MainPage());
+        if (cajacontraseña.Text != cajarepetircontraseña.Text)
+        {
+            await DisplayAlert("Error", "Las contraseñas no coinciden.", "OK");
+            return;
+        }
     }
 }
