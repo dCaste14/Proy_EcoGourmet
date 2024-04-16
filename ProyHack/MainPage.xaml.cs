@@ -18,7 +18,7 @@ namespace ProyHack
         private async void OnNavegar2Cliked(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new Registro());
+            await Navigation.PushAsync(new InicioSesion());
         }
     }
 

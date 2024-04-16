@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyHack.Registro"
-             Title="Registro">
-
-
-    <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0">
-        <!-- Contenido principal de tu página -->
-        <!-- Asegúrate de que el contenido esté dentro de un Grid o algún otro contenedor -->
+             x:Class="ProyHack.InicioSesion"
+             Title="InicioSesion">
+    
+    <VerticalStackLayout>
+        Spacing="25"
+        Padding="30,0">
 
         <!-- Imagen en la esquina superior derecha -->
         <Image Source="logo.png" 
@@ -19,14 +16,8 @@
         <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
 
         <Entry 
-            x:Name ="cajanombre" 
-            Placeholder ="Nombre" 
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-
-        <Entry 
             x:Name ="cajacorreo" 
-            Placeholder ="ejemplo@ejemplo.com" 
+            Placeholder ="Correo" 
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
@@ -36,16 +27,11 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
-        <Entry 
-            x:Name ="cajarepetircontraseña" 
-            Placeholder =" Repetir Contraseña" 
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-
         <Button
-            x:Name="BtnEnviarReg"
-            Text="Enviar"
+            x:Name="BtnEntrar"
+            Text="Entrar"
             Clicked="OnBtnEnviarRegCliked"
             HorizontalOptions="Center" />
+        
     </VerticalStackLayout>
 </ContentPage>
