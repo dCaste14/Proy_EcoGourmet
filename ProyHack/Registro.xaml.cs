@@ -22,5 +22,7 @@ public partial class Registro : ContentPage
             await DisplayAlert("Error", "Las contraseñas no coinciden.", "OK");
             return;
         }
+
+        await Navigation.PushAsync(new LandingPage());
     }
 }
