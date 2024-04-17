@@ -35,9 +35,10 @@ namespace ProyHack
 
             BBDD.AddUser(user);
             await DisplayAlert("Completo", $"Usuario registrado correctamente, {FileSystem.Current.AppDataDirectory}", "OK");
-            
+
+            await Navigation.PushAsync(new MainPage());
         }
 
-        await Navigation.PushAsync(new LandingPage());
+        
     }
 }

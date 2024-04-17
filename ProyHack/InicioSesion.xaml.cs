@@ -17,5 +17,7 @@ public partial class InicioSesion : ContentPage
         }
 
         //falta comprbar q el usuario y contraseña existen y coinciden 
+
+        await Navigation.PushAsync(new LandingPage());
     }
 }
