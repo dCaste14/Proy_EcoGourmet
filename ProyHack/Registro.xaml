@@ -33,19 +33,21 @@
         <Entry 
             x:Name ="cajacontraseña" 
             Placeholder ="Contraseña" 
+            IsPassword="True"
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
         <Entry 
             x:Name ="cajarepetircontraseña" 
             Placeholder =" Repetir Contraseña" 
+            IsPassword="True"
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
         <Button
             x:Name="BtnEnviarReg"
             Text="Enviar"
-            Clicked="OnBtnEnviarRegCliked"
+            Clicked="OnBtnEnviarRegClicked"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

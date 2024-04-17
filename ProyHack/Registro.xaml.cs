@@ -1,26 +1,41 @@
-namespace ProyHack;
+using BCrypt.Net;
 
-public partial class Registro : ContentPage
+namespace ProyHack
 {
-    public Registro()
+    public partial class Registro : ContentPage
     {
-        InitializeComponent();
-    }
-
-    private async void OnBtnEnviarRegCliked(object sender, EventArgs e)
-    {
-        // Validación de campos
-        if (string.IsNullOrWhiteSpace(cajanombre.Text) || string.IsNullOrWhiteSpace(cajacorreo.Text) 
-            || string.IsNullOrWhiteSpace(cajacontraseña.Text) || string.IsNullOrWhiteSpace(cajarepetircontraseña.Text))
+        public Registro()
         {
-            await DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
-            return;
+            InitializeComponent();
         }
 
-        if (cajacontraseña.Text != cajarepetircontraseña.Text)
+        private async void OnBtnEnviarRegClicked (object sender, EventArgs e)
         {
-            await DisplayAlert("Error", "Las contraseñas no coinciden.", "OK");
-            return;
+            // Validación de campos
+            if (string.IsNullOrWhiteSpace(cajanombre.Text) || string.IsNullOrWhiteSpace(cajacorreo.Text)
+                || string.IsNullOrWhiteSpace(cajacontraseña.Text) || string.IsNullOrWhiteSpace(cajarepetircontraseña.Text))
+            {
+                await DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
+                return;
+            }
+
+            if (cajacontraseña.Text != cajarepetircontraseña.Text)
+            {
+                await DisplayAlert("Error", "Las contraseñas no coinciden.", "OK");
+                return;
+            }
+
+            //Creacion de usuario y guardar en base de datos
+            var user = new User()
+            {
+                Username = cajanombre.Text,
+                Email = cajacorreo.Text,
+                Password = BCrypt.Net.BCrypt.HashPassword(cajanombre.Text)
+            };
+
+            BBDD.AddUser(user);
+            await DisplayAlert("Completo", $"Usuario registrado correctamente, {FileSystem.Current.AppDataDirectory}", "OK");
+            
         }
     }
 }
