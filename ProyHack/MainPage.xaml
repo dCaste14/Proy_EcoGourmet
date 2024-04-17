@@ -17,9 +17,9 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="EcoGourmet"
+                Text="E c o G o u r m e t"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                FontSize="32" 
                 HorizontalOptions="Center" />
 
             <Label
@@ -30,12 +30,14 @@
 
             <Button
                 x:Name="BtnNavegar1"
+                Background="#7DCEA0"
                 Text="Resgistro"
                 Clicked="OnNavegar1Cliked"
                 HorizontalOptions="FillAndExpand"/>
 
             <Button
                 x:Name="BtnNavegar2"
+                Background="#7DCEA0"
                 Text="Iniciar sesión"
                 Clicked="OnNavegar2Cliked"
                 HorizontalOptions="FillAndExpand" />

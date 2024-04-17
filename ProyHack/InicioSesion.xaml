@@ -11,7 +11,7 @@
         <!-- Imagen en la esquina superior derecha -->
         <Image Source="logo.png" 
                HorizontalOptions="End" VerticalOptions="Start"
-               Margin="0,-15,0,0"
+               Margin="0,-25,0,0"
                WidthRequest="80" HeightRequest="80"/>
         <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
 
@@ -29,6 +29,7 @@
 
         <Button
             x:Name="BtnEntrar"
+            Background="#7DCEA0"
             Text="Entrar"
             Clicked="OnBtnEnviarInicCliked"
             HorizontalOptions="Center" />
