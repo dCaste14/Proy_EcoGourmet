@@ -5,7 +5,7 @@
         public App()
         {
             InitializeComponent();
-
+            BBDD.InitializeDatabase();
             MainPage = new AppShell();
         }
     }
