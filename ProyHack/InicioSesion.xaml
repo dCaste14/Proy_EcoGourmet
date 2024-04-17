@@ -4,14 +4,14 @@
              x:Class="ProyHack.InicioSesion"
              Title="InicioSesion">
     
-    <VerticalStackLayout>
+    <VerticalStackLayout
         Spacing="25"
         Padding="30,0">
 
         <!-- Imagen en la esquina superior derecha -->
         <Image Source="logo.png" 
                HorizontalOptions="End" VerticalOptions="Start"
-               Margin="0,20,20,0"
+               Margin="0,-15,0,0"
                WidthRequest="80" HeightRequest="80"/>
         <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
 
@@ -30,7 +30,7 @@
         <Button
             x:Name="BtnEntrar"
             Text="Entrar"
-            Clicked="OnBtnEnviarRegCliked"
+            Clicked="OnBtnEnviarInicCliked"
             HorizontalOptions="Center" />
         
     </VerticalStackLayout>
