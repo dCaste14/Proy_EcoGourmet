@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyHack.AniadirAlim"
+             Title="AniadirAlim">
+    <VerticalStackLayout
+
+        Spacing="25"
+        Padding="30,0">
+
+        <!-- Imagen en la esquina superior derecha -->
+        <Image Source="logo.png" 
+       HorizontalOptions="End" VerticalOptions="Start"
+       Margin="0,-25,0,0"
+       WidthRequest="80" HeightRequest="80"/>
+        <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
+
+        <Entry 
+            x:Name ="cajanombre" 
+            Placeholder ="Nombre" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+
+        <Label Text="Fecha de caducidad:" />
+        <DatePicker x:Name="FechaCad" />
+        <Entry 
+            x:Name ="cajanombre" 
+            Placeholder ="Nombre" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>
