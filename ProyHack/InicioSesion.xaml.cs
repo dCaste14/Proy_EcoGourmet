@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace ProyHack;
 
 public partial class InicioSesion : ContentPage
@@ -16,8 +18,23 @@ public partial class InicioSesion : ContentPage
             return;
         }
 
-        //falta comprbar q el usuario y contraseña existen y coinciden 
+        //Comprobar que el usuario existe y la password es correcta
 
-        await Navigation.PushAsync(new LandingPage());
+        if (!Regex.IsMatch(cajacorreo.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+        {
+            await DisplayAlert("Error", "Correo electrónico no válido.", "OK");
+            return;
+        }
+
+        if (BBDD.ValidarUser(cajacorreo.Text, cajacontraseña.Text))
+        {
+            await Navigation.PushAsync(new LandingPage());
+        }
+        else
+        {
+            await DisplayAlert("Error", "Correo electrónico o contraseña incorrectos", "OK");
+        }
+
+       
     }
 }

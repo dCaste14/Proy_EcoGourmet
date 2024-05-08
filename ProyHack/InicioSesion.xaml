@@ -24,6 +24,7 @@
         <Entry 
             x:Name ="cajacontraseña" 
             Placeholder ="Contraseña" 
+            IsPassword="True"
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 

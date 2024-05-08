@@ -49,5 +49,26 @@ namespace ProyHack
                 command.ExecuteNonQuery();
             }
         }
+
+        public static bool ValidarUser(string email, string password)
+        {
+            using (var connection = new SqliteConnection($"Data Source = {dbPath}"))
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT Password FROM Users WHERE Email = $email";
+                command.Parameters.AddWithValue("$email", email);
+                using (var reader = command.ExecuteReader()) 
+                {
+                    if (reader.Read())
+                    {
+                        string PasswordBBDD = reader.GetString(0);
+                        return BCrypt.Net.BCrypt.Verify(password, PasswordBBDD);
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

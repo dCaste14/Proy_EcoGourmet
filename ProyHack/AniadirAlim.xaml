@@ -24,8 +24,8 @@
         <Label Text="Fecha de caducidad:" />
         <DatePicker x:Name="FechaCad" />
         <Entry 
-            x:Name ="cajanombre" 
-            Placeholder ="Nombre" 
+            x:Name ="cajanombre2" 
+            Placeholder ="Nombre2" 
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 

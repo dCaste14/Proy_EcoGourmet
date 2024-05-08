@@ -1,4 +1,5 @@
 using BCrypt.Net;
+using System.Text.RegularExpressions;
 
 namespace ProyHack
 {
@@ -19,18 +20,27 @@ namespace ProyHack
                 return;
             }
 
+            if (!Regex.IsMatch(cajacorreo.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                await DisplayAlert("Error", "Correo electrónico no válido.", "OK");
+                return;
+            }
+
             if (cajacontraseña.Text != cajarepetircontraseña.Text)
             {
                 await DisplayAlert("Error", "Las contraseñas no coinciden.", "OK");
                 return;
             }
 
+         
+            var hashedPassword = await Task.Run(() => BCrypt.Net.BCrypt.HashPassword(cajacontraseña.Text, workFactor: 10));
+
             //Creacion de usuario y guardar en base de datos
             var user = new User()
             {
                 Username = cajanombre.Text,
                 Email = cajacorreo.Text,
-                Password = BCrypt.Net.BCrypt.HashPassword(cajanombre.Text)
+                Password = hashedPassword,
             };
 
             BBDD.AddUser(user);
