@@ -9,4 +9,9 @@ public partial class AniadirAlim : ContentPage
         DatePicker FechaCad = new DatePicker();
       
     }
+
+    private async void OnNavegar1Cliked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LandingPage());
+    }
 }

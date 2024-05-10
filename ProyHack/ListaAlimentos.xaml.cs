@@ -1,8 +1,8 @@
 namespace ProyHack;
 
-public partial class LandingPage : ContentPage
+public partial class ListaAlimentos : ContentPage
 {
-	public LandingPage()
+	public ListaAlimentos()
 	{
 		InitializeComponent();
 	}
@@ -15,10 +15,5 @@ public partial class LandingPage : ContentPage
     private async void OnNavegar2Cliked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new AniadirAlim());
-    }
-
-    private async void OnNavegar3Cliked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new ListaAlimentos());
     }
 }

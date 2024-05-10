@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyHack.AniadirAlim"
-             Title="AniadirAlim">
+             Title="Aniadir Alimimento">
     <VerticalStackLayout
 
         Spacing="25"
@@ -10,14 +10,14 @@
 
         <!-- Imagen en la esquina superior derecha -->
         <Image Source="logo.png" 
-       HorizontalOptions="End" VerticalOptions="Start"
-       Margin="0,-25,0,0"
-       WidthRequest="80" HeightRequest="80"/>
+            HorizontalOptions="End" VerticalOptions="Start"
+            Margin="0,-25,0,0"
+            WidthRequest="80" HeightRequest="80"/>
         <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
 
         <Entry 
             x:Name ="cajanombre" 
-            Placeholder ="Nombre" 
+            Placeholder ="Nombre del alimento" 
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
@@ -25,9 +25,14 @@
         <DatePicker x:Name="FechaCad" />
         <Entry 
             x:Name ="cajanombre2" 
-            Placeholder ="Nombre2" 
+            Placeholder ="Categoría del alimento" 
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
-
+        <Button
+            x:Name="BtnEntrar"
+            Background="#7DCEA0"
+            Text="Añadir"
+            Clicked="OnNavegar1Cliked"
+            HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
