@@ -12,6 +12,28 @@ public partial class AniadirAlim : ContentPage
 
     private async void OnNavegar1Cliked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new LandingPage());
+        // Obtengo el id del usuario
+        int userId = SesionDeUsuario.CurrentUser;
+
+        var alimento = new Alimento()
+        {
+            Nombre = cajanombre.Text,
+            FechaCaducidad = FechaCad.Date,
+            Categoria = cajanombre2.Text,
+        };
+
+
+        try
+        {
+            BBDD.AddAlimento(alimento, userId);
+            await DisplayAlert("Exito", "Alimento añadido correctamente", "OK");
+            await Navigation.PushAsync(new LandingPage());
+        }
+        catch (Exception ex) 
+        {
+            await DisplayAlert("Error", "No se pudo añadir el alimento: " + ex.Message, "OK");
+        }
+
+       
     }
 }

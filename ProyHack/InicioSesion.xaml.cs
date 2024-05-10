@@ -26,8 +26,11 @@ public partial class InicioSesion : ContentPage
             return;
         }
 
-        if (BBDD.ValidarUser(cajacorreo.Text, cajacontraseña.Text))
+        int userId = BBDD.ValidarUser(cajacorreo.Text, cajacontraseña.Text);
+
+        if (userId > 0)
         {
+            SesionDeUsuario.SetCurrentUser(userId);  //Asigna un id al usuario que ha inicidado sesion
             await Navigation.PushAsync(new LandingPage());
         }
         else
@@ -35,6 +38,6 @@ public partial class InicioSesion : ContentPage
             await DisplayAlert("Error", "Correo electrónico o contraseña incorrectos", "OK");
         }
 
-       
+
     }
 }

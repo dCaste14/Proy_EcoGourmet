@@ -32,7 +32,13 @@ namespace ProyHack
                 return;
             }
 
-         
+            if (BBDD.EmailExiste(cajacorreo.Text))
+            {
+                await DisplayAlert("Error", "Este correo electrónico ya está registrado.", "OK");
+                return;
+            }
+
+
             var hashedPassword = await Task.Run(() => BCrypt.Net.BCrypt.HashPassword(cajacontraseña.Text, workFactor: 10));
 
             //Creacion de usuario y guardar en base de datos
@@ -43,10 +49,16 @@ namespace ProyHack
                 Password = hashedPassword,
             };
 
-            BBDD.AddUser(user);
-            await DisplayAlert("Completo", $"Usuario registrado correctamente, {FileSystem.Current.AppDataDirectory}", "OK");
-
-            await Navigation.PushAsync(new MainPage());
+            try
+            {
+                BBDD.AddUser(user);
+                await DisplayAlert("Completo", "Usuario registrado correctamente", "OK");
+                await Navigation.PushAsync(new MainPage());
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "No se pudo registrar el usuario: " + ex.Message, "OK");
+            }
         }
 
         
