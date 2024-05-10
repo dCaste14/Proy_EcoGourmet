@@ -104,7 +104,7 @@ namespace ProyHack
                 connection.Open();
 
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT Id, Nombre, FechaCaducidad, Categoria FROM Alimentos WHERE UserId = $userId";
+                command.CommandText = "SELECT Id, Nombre, FechaCaducidad, Categoria FROM Alimentos WHERE UserId = $userId ORDER BY FechaCaducidad";
                 command.Parameters.AddWithValue("$userId", userId);
                 using (var reader = command.ExecuteReader())
                 {

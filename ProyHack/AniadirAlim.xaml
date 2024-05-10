@@ -48,5 +48,7 @@
         VerticalOptions="Center" 
         HorizontalOptions="Center"/>
 
+        <Button Text="Añadir" Clicked="OnNavegar1Cliked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
     </VerticalStackLayout>
 </ContentPage>
