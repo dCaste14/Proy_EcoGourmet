@@ -40,7 +40,7 @@
             </Picker.ItemsSource>
         </Picker>
         <Label Text="Elemento seleccionado: " />
-        <Label Text="{Binding SelectedItem, Source={x:Reference myPicker}}" />
+        <Label Text="{Binding SelectedItem, Source={x:Reference TipoAlim}}" />
 
         <Entry 
         x:Name ="cantidad" 
