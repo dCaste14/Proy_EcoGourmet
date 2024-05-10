@@ -43,7 +43,8 @@ public partial class ListaAlimentos : ContentPage
                 Text = "Eliminar",
                 FontSize = 18,
                 Margin = new Thickness(5),
-                CommandParameter = alimento.Id
+                CommandParameter = alimento.Id,
+                BackgroundColor = Color.FromHex("#7DCEA0")
             };
             deleteButton.Clicked += OnDeleteButtonClicked;
             

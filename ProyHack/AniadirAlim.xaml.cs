@@ -66,6 +66,21 @@ public partial class AniadirAlim : ContentPage
         SelectedDate = e.NewDate;
         // Aquí puedes usar SelectedDate para lo que necesites
     }
+
+    private async void OnNavegar4Cliked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LandingPage());
+    }
+
+    private async void OnNavegar2Cliked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AniadirAlim());
+    }
+
+    private async void OnNavegar3Cliked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ListaAlimentos());
+    }
 }
 
 
