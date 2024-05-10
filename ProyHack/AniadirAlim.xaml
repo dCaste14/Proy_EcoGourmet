@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyHack.AniadirAlim"
-             Title="Aniadir Alimimento">
+             Title="AniadirAlim">
     <VerticalStackLayout
 
         Spacing="25"
@@ -10,14 +10,14 @@
 
         <!-- Imagen en la esquina superior derecha -->
         <Image Source="logo.png" 
-            HorizontalOptions="End" VerticalOptions="Start"
-            Margin="0,-25,0,0"
-            WidthRequest="80" HeightRequest="80"/>
+       HorizontalOptions="End" VerticalOptions="Start"
+       Margin="0,-25,0,0"
+       WidthRequest="80" HeightRequest="80"/>
         <!-- Ajusta el Margen (Margin) según sea necesario para la posición deseada -->
 
         <Entry 
             x:Name ="cajanombre" 
-            Placeholder ="Nombre del alimento" 
+            Placeholder ="Nombre" 
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
 
@@ -43,23 +43,10 @@
         <Label Text="{Binding SelectedItem, Source={x:Reference myPicker}}" />
 
         <Entry 
-<<<<<<< Updated upstream
-            x:Name ="cajanombre2" 
-            Placeholder ="Categoría del alimento" 
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-        <Button
-            x:Name="BtnEntrar"
-            Background="#7DCEA0"
-            Text="Añadir"
-            Clicked="OnNavegar1Cliked"
-            HorizontalOptions="Center" />
-=======
         x:Name ="cantidad" 
         Placeholder ="Cantidad" 
         VerticalOptions="Center" 
         HorizontalOptions="Center"/>
 
->>>>>>> Stashed changes
     </VerticalStackLayout>
 </ContentPage>

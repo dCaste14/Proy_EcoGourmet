@@ -13,12 +13,7 @@ public partial class AniadirAlim : ContentPage
         DatePicker FechaCad = new DatePicker();
       
     }
-<<<<<<< Updated upstream
 
-    private async void OnNavegar1Cliked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new LandingPage());
-=======
     private void Picker_SelectedIndexChanged(object sender, EventArgs e)
     {
         var picker = sender as Picker;
@@ -30,6 +25,6 @@ public partial class AniadirAlim : ContentPage
     {
         SelectedDate = e.NewDate;
         // Aquí puedes usar SelectedDate para lo que necesites
->>>>>>> Stashed changes
+
     }
 }
