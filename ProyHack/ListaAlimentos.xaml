@@ -13,16 +13,11 @@
             <!-- Footer -->
         </Grid.RowDefinitions>
 
-        <Image Source="logo.png" 
-        HorizontalOptions="End" VerticalOptions="Start"
-        Margin="0,-25,0,0"
-        WidthRequest="80" HeightRequest="80"/>
-
         <!-- Navigation Bar -->
         <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions ="Center" Padding="5">
             <Button Text="Inicio" Margin="20,0,0,0" Background="#7DCEA0" Clicked="OnNavegar1Cliked"/>
-            <Button Text="Añadir Alimentos" Margin="10,0,0,0" Background="#7DCEA0" Clicked="OnNavegar2Cliked" />
-            <Button Text="Recetas" Margin="10,0,0,0" Background="#7DCEA0"/>
+            <Button Text="Añadir Alimentos" Margin="10,0,10,0" Background="#7DCEA0" Clicked="OnNavegar2Cliked" />
+            <Button Text="Recetas" Margin="0,0,0,0" Background="#7DCEA0" Clicked="MostrarNotificacion_Click"/>
         </StackLayout>
 
         <!-- Main Content -->

@@ -66,6 +66,11 @@ public partial class ListaAlimentos : ContentPage
         await Navigation.PushAsync(new AniadirAlim());
     }
 
+    private async void MostrarNotificacion_Click(object sender, EventArgs e)
+    {
+        await DisplayAlert("RECETAS", "Proximamente estará disponible la página de RECETAS ...", "OK");
+    }
+
     private async void OnDeleteButtonClicked(object? sender, EventArgs e)
     {
         if (sender == null)

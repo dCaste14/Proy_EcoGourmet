@@ -21,4 +21,9 @@ public partial class LandingPage : ContentPage
     {
         await Navigation.PushAsync(new ListaAlimentos());
     }
+
+    private async void MostrarNotificacion_Click(object sender, EventArgs e)
+    {
+        await DisplayAlert("RECETAS","Proximamente estará disponible la página de RECETAS ...","OK");
+    }
 }
