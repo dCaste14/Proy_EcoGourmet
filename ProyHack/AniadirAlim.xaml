@@ -22,8 +22,28 @@
             HorizontalOptions="Center"/>
 
         <Label Text="Fecha de caducidad:" />
-        <DatePicker x:Name="FechaCad" />
+
+        <DatePicker x:Name="myDatePicker" DateSelected="DatePicker_DateSelected" />
+        <Label Text="Fecha seleccionada: " />
+        <Label Text="{Binding Date, Source={x:Reference myDatePicker}, StringFormat='{}{0:d}'}" />
+
+
+        <Picker x:Name="TipoAlim" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Carne</x:String>
+                    <x:String>Pescado</x:String>
+                    <x:String>Verdura</x:String>
+                    <x:String>Fruta</x:String>
+                    <x:String>Conserva</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Label Text="Elemento seleccionado: " />
+        <Label Text="{Binding SelectedItem, Source={x:Reference myPicker}}" />
+
         <Entry 
+<<<<<<< Updated upstream
             x:Name ="cajanombre2" 
             Placeholder ="Categoría del alimento" 
             VerticalOptions="Center" 
@@ -34,5 +54,12 @@
             Text="Añadir"
             Clicked="OnNavegar1Cliked"
             HorizontalOptions="Center" />
+=======
+        x:Name ="cantidad" 
+        Placeholder ="Cantidad" 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center"/>
+
+>>>>>>> Stashed changes
     </VerticalStackLayout>
 </ContentPage>
